@@ -31,8 +31,8 @@ public class App {
     for (int i = 0; i < personas.length; i++) {
         view.print(personas[i].toString()); // Imprime la representación en cadena de cada persona
     }
-    view.print("Inserte la edad a buscar: ");
-    int edad =  leer.nextInt();
+    view.print("Buscando la edad de 40...");
+    int edad = 40;
     controller.buscarPorEdad(personas, edad); 
     Persona personaEncontrada = controller.buscarPorEdad(personas, edad);
     if (personaEncontrada != null) {
@@ -40,4 +40,13 @@ public class App {
     } else {
         view.print("No se encontró ninguna persona con esa edad."); // Mensaje si no se encuentra la persona
     }
+    view.print("Buscando la edad de 99...");
+    edad = 99;
+    personaEncontrada = controller.buscarPorEdad(personas, edad);
+    if (personaEncontrada != null){
+        view.print("Persona encontrada: " + personaEncontrada.toString()); // Imprime la representación en cadena de la persona encontrada
+    } else {
+        view.print("No se encontró ninguna persona con esa edad."); // Mensaje si no se encuentra la persona
+    }
+
 }}
